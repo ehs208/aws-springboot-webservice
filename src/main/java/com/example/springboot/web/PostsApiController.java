@@ -6,6 +6,7 @@ import com.example.springboot.web.dto.PostsSaveRequestDto;
 import com.example.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -14,18 +15,18 @@ import org.springframework.web.bind.annotation.*;
 public class PostsApiController {
     private final PostsService postsService;
 
-    @PostMapping("/api/v1/posts")
+    @PostMapping(value = "/api/v1/posts")
     public Long save(@RequestBody PostsSaveRequestDto requestDto) {
         return postsService.save(requestDto);
     }
 
-    @PutMapping("/api/v1/posts/{id}")
-    public Long update(@PathVariable(name="id") Long id, @RequestBody PostsUpdateRequestDto requestDto) {
+    @PutMapping(value = "/api/v1/posts/{id}")
+    public Long update(@PathVariable("id") Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
-    @GetMapping("/api/v1/posts/{id}")
-    public PostsResponseDto findById(@PathVariable Long id) {
+    @GetMapping(value = "/api/v1/posts/{id}")
+    public PostsResponseDto findById(@PathVariable("id") Long id) {
         return postsService.findById(id);
     }
 }
