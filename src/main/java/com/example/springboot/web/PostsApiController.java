@@ -5,8 +5,6 @@ import com.example.springboot.web.dto.PostsResponseDto;
 import com.example.springboot.web.dto.PostsSaveRequestDto;
 import com.example.springboot.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -29,4 +27,6 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable("id") Long id) {
         return postsService.findById(id);
     }
+
+
 }
