@@ -7,6 +7,7 @@
             <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
         </div>
     </div>
+</div>
 <br>
 <!-- 목록 출력 영역 -->
 <table class="table table-horizontal table-bordered">
@@ -22,13 +23,12 @@
     {{#posts}}
         <tr>
             <td>{{id}}</td>
-            <td>{{title}}</a></td>
+            <td><a href="/posts/update/{{id}}">{{title}}</a></td>
             <td>{{author}}</td>
             <td>{{modifiedDate}}</td>
         </tr>
     {{/posts}}
     </tbody>
 </table>
-</div>
 
 {{>layout/footer}}
