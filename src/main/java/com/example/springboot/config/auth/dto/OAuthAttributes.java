@@ -33,9 +33,6 @@ public class OAuthAttributes {
         return ofGoogle(userNameAttributeName, attributes);
     }
 
-    /* ofGoogle()
-     * OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나 변환
-     */
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
@@ -58,11 +55,6 @@ public class OAuthAttributes {
                 .build();
     }
 
-    /* toEntity()
-     * User 엔티티 생성
-     * OAuthAttributes에서 엔티티 생성 시점 = 처음 가입 시
-     * OAuthAttributes 클래스 생성이 끝났으면 같은 패키지에 SessionUser 클래스 생성
-     */
     public User toEntity() {
         return User.builder()
                 .name(name)
