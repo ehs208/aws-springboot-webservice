@@ -32,6 +32,10 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
 }
 
-tasks.named("jar") {
+bootJar {
+    enabled = true
+}
+
+jar {
     enabled = false
 }
