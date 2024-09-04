@@ -32,10 +32,6 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
 }
 
-jar {
+tasks.named("jar") {
     enabled = false
-}
-
-bootJar {
-   mainClass = 'com.example.springboot.Application'
 }
